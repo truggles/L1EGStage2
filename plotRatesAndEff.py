@@ -34,7 +34,7 @@ h2 = ROOT.TH1F('h2', 'Stage 2 Rate',rateLimit,0,rateLimit)
 h2.Sumw2()
 
 for i in range(1, h1.GetNbinsX()+1) :
-    print h1.Integral( i, rateLimit )
+    #print h1.Integral( i, rateLimit )
     h2.SetBinContent( i, h1.Integral( i, rateLimit ) )
 
 # Normalize to 30 MHz
@@ -63,7 +63,7 @@ dPhi = ROOT.TH1F('dPhi', 'Stage 2: L1 EG Matching Offline',80,-0.2,0.2)
 cnt = 0
 for i in range( 0, effL1Tree.GetEntries() ) :
 
-
+    #if cnt > 1000 : break
     # Get the leading L1 EG object and Elec for each event
     effL1Tree.GetEntry(i)
     cnt += 1
@@ -100,7 +100,8 @@ for i in range( 0, effL1Tree.GetEntries() ) :
         #if L1Obj[2] - elec[2] > 0.2 : print "dPhi > 0.2",L1Obj[2], elec[2]
         #if L1Obj[2] > 0 and elec[2] < 0 : print "dPhi",L1Obj[2], elec[2]
         #if L1Obj[2] < 0 and elec[2] > 0 : print "dPhi",L1Obj[2], elec[2]
-        dPhi.Fill( calcDPhi(L1Obj[2], elec[2]) )
+        dPhi.Fill( L1Obj[2] - elec[2] )
+        #XXX dPhi.Fill( calcDPhi(L1Obj[2], elec[2]) )
         
 c.Clear()
 c.SetLogy(0)

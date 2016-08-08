@@ -21,9 +21,9 @@ scram b -j 8
 Currently set up to run over the default Stage2 recommendations from here:
 https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TStage2Instructions
 
-This is using these datasets
-rate: dataset=/ZeroBias1/Run2015D-v1/RAW
-eff: dataset=/DoubleEG/Run2015D-ZElectron-PromptReco-v4/RAW-RECO
+This is using these datasets<BR>
+rate: dataset=/ZeroBias1/Run2015D-v1/RAW<BR>
+eff: dataset=/DoubleEG/Run2015D-ZElectron-PromptReco-v4/RAW-RECO<BR>
 
 To run:
 ```
