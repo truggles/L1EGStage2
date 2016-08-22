@@ -1,4 +1,4 @@
-date=2016Aug08
+date=2016Aug21_2
 
 farmoutAnalysisJobs \
         --input-file-list=effFiles80x.txt \

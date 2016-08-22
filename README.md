@@ -1,22 +1,21 @@
 # L1EGStage2
 For creating eff, rate and resolution plots for Stage2
 
+Currently using CMSSW_8_0_9 with checkout tag v76.1, most up to date as of Aug 8, 2016
+
 Setup:
 ```
-scramv1 project CMSSW CMSSW_8_0_7
-cd CMSSW_8_0_7/src
+cmsrel CMSSW_8_0_9
+cd CMSSW_8_0_9/src
 eval `scramv1 runtime -sh`
-```
-
-```
 git cms-init
 git remote add cms-l1t-offline git@github.com:cms-l1t-offline/cmssw.git
 git fetch cms-l1t-offline
-git cms-merge-topic cms-l1t-offline:l1t-integration-v47.0
-git cms-addpkg L1Trigger/L1TCommon
+git cms-merge-topic --unsafe cms-l1t-offline:l1t-integration-v78.0
 git clone git@github.com:truggles/L1EGStage2.git
 scram b -j 8
 ```
+
 
 Currently set up to run over the default Stage2 recommendations from here:
 https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TStage2Instructions
@@ -37,3 +36,4 @@ After files are finished:
 ```
 python plotRatesAndEff.py
 ```
+

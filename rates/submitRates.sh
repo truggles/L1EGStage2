@@ -1,4 +1,4 @@
-date=2016Aug04
+date=2016Aug21
 
 farmoutAnalysisJobs \
         --input-file-list=rateFiles80X.txt \
